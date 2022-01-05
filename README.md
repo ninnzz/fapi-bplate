@@ -3,7 +3,7 @@
 Project template for Hacarus projects using FastAPI.
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.9+
 - Poetry 0.12+
 
 Running the application
