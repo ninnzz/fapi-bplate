@@ -5,7 +5,9 @@ Uses pydantic validation. See full info here:
 https://pydantic-docs.helpmanual.io/usage/schema/
 """
 from typing import Optional
+
 from pydantic import BaseModel
+
 
 class SampleRequest(BaseModel):
     name: str

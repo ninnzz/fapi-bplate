@@ -49,6 +49,7 @@ For additional features and technical specifications, you can visit the official
     │   ├── config.py           <- If you want to set config, do it here.
     │   └── server.py           <- All app initialization and pre-loadings
     │
+    ├── .pre-commit-config.yaml <- All pre-commit checks and scripts
     └── pyproject.toml     <- A configuration file to store build system requirements for Python projects.
 
  ### Application Configuration
@@ -85,3 +86,20 @@ Pydantic automatically handles environment variable parsing.
 For the basic API calls and FastAPI syntax, checkout `api/routes/sample.py`. This contains all the basic routing patterns as well as some request and error handling.
 
 For a more advance example of using a response and request model, check out `api/routes/sample2.py`.
+
+
+### Using pre-commit
+
+Pre-commit is included in the dev dependencies. You can run the following command to install them.
+
+```shell
+poetry run pre-commit install
+```
+
+Some included pre-commit scripts
+- black
+- isort
+- flake8
+- pylint
+
+> If pre-commit fails to run, try running git commit inside your virtual environment

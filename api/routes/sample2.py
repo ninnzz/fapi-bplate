@@ -1,11 +1,9 @@
 """Sample route 2."""
 from typing import Optional
-from fastapi import APIRouter
-from api.config import get_config
-
 
 from fastapi import APIRouter, Depends, HTTPException
 
+from api.config import get_config
 
 router = APIRouter(
     prefix="/sample2",

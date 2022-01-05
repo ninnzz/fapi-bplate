@@ -1,8 +1,8 @@
 from typing import Dict
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
 
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from api.config import get_config
 from api.routes import sample
@@ -15,10 +15,10 @@ config = get_config()
 # Setup cors
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=config.cors_allow_origin.split(','),
+    allow_origins=config.cors_allow_origin.split(","),
     allow_credentials=config.cors_allow_credentials,
-    allow_methods=config.cors_allow_methods.split(','),
-    allow_headers=config.cors_allow_headers.split(','),
+    allow_methods=config.cors_allow_methods.split(","),
+    allow_headers=config.cors_allow_headers.split(","),
 )
 
 # Add all router
@@ -33,6 +33,6 @@ async def unicorn_exception_handler(request: Request, exc: Exception):
         content={
             "message": "Uh-oh, our gears are broken. Please contact admin.",
             "title": "Internal error occurred.",
-            "details": str(exc)
-        }
+            "details": str(exc),
+        },
     )
