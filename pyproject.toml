@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "fastapi-boilerplate"
+version = "0.1.0"
+description = "Fast API boilerplate"
+authors = ["ninz <nreclarin@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.70.1"
+uvicorn = {extras = ["standard"], version = "^0.14.0"}
+sqlalchemy = "^1.4.20"
+SQLAlchemy = "^1.4.29"
+
+[tool.poetry.dev-dependencies]
+pylint_gitlab = "^0.3.0"
+mypy = "^0.782"
+black = "^21.12b0"
+pre-commit = "^2.16.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
