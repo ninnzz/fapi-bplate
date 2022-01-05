@@ -9,6 +9,7 @@ Project template for Hacarus projects using FastAPI.
 Running the application
 
 ```python
+poetry install
 poetry run uvicorn api.main:app --reload
 ```
 ```shell script
@@ -49,14 +50,14 @@ For additional features and technical specifications, you can visit the official
     │   └── server.py           <- All app initialization and pre-loadings
     │
     └── pyproject.toml     <- A configuration file to store build system requirements for Python projects.
-    
+
  ### Application Configuration
- 
+
  It's easy to declare environment variables using the `.env` file.
  You can add as many environment variables as you want as long as you also add the corresponding entry in `api/config.py`.
- 
+
 For example, if you have the following environment variables
- 
+
  ```shell script
 ENV_VAR1=1
 OPERATING_SYSTEM=Windows
