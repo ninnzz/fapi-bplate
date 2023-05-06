@@ -34,7 +34,11 @@ repos:
     require_serial: true
     types_or: [python, pyi]
 
-- repo: https://github.com/PyCQA/pylint
-  rev: 'v2.12.2' # Use the revision sha / tag you want to point at
+- repo: local
   hooks:
   - id: pylint
+    name: pylint
+    entry: poetry run pylint api/
+    language: system
+    types: [ python ]
+    require_serial: true

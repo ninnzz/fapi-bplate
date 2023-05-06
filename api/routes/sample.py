@@ -1,20 +1,24 @@
 """Sample route."""
 from typing import Optional
-from fastapi import APIRouter, HTTPException
-from api.config import get_config
 
+from fastapi import APIRouter, HTTPException
+
+from api.config import get_config
 
 router = APIRouter()
 
 
 @router.get("/")
 async def root():
+    """Root."""
     return {"message": "Hello World"}
 
 
 @router.get("/hello")
 async def hello(name: str):
     """
+    Hello Function.
+
     Example of passing a query string in URL.
 
     :param name:
@@ -26,6 +30,8 @@ async def hello(name: str):
 @router.get("/hello_optional")
 async def hello_optional(name: Optional[str] = None):
     """
+    Hello Optional.
+
     Example of passing an optional query string in URL.
 
     :param name:
@@ -33,14 +39,14 @@ async def hello_optional(name: Optional[str] = None):
     """
     if name is not None:
         return {"message": f"Hello {name}"}
-    else:
-        return {"message": "name is an optional parameter"}
+
+    return {"message": "name is an optional parameter"}
 
 
 @router.get("/get_error/{error_code}")
 async def sample_error(error_code: int, message: Optional[str] = None):
     """
-    Example of throwing errors.
+    Error Example.
 
     :param error_code:
     :param message:
@@ -56,7 +62,7 @@ async def sample_error(error_code: int, message: Optional[str] = None):
 @router.get("/token")
 async def token():
     """
-    Example access of config.
+    Config Example.
 
     :return:
     """

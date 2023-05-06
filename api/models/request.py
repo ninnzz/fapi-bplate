@@ -10,6 +10,8 @@ from pydantic import BaseModel
 
 
 class SampleRequest(BaseModel):
+    """Sample Request."""
+
     name: str
     info: Optional[str] = None
     age: int

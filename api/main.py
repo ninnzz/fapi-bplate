@@ -1,5 +1,8 @@
-from typing import Dict
+"""
+Main function.
 
+Includes all the router and middleware loading
+"""
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -11,6 +14,7 @@ app = FastAPI()
 
 # Get instance of settings
 config = get_config()
+
 
 # Setup cors
 app.add_middleware(
@@ -27,7 +31,8 @@ app.include_router(sample.router)
 
 # Add general error handler
 @app.exception_handler(Exception)
-async def unicorn_exception_handler(request: Request, exc: Exception):
+async def unicorn_exception_handler(_: Request, exc: Exception):
+    """Exception handler."""
     return JSONResponse(
         status_code=500,
         content={
